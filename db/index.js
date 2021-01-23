@@ -2,7 +2,7 @@ const { Pool } = require('pg');
 const config = require('../config');
 
 
-const pghost = config.pghost;
+const { pghost } = config;
 const pgport = config.pgport;
 const pguser = config.pguser;
 const pgpassword = config.pgpassword;
@@ -25,6 +25,6 @@ const pool = new Pool({
 
 module.exports = {
   query: (text, params, callback) => {
-    return pool.query(text, params, callback)
+    return pool.query(text, params, callback);
   },
 }

@@ -1,27 +1,11 @@
 const db = require('../db');
 
 // get echo by id
-exports.dbReady = async function (request, response) { 
-    console.log('/dbReady called');
-    
-    const text = 'SELECT NOW()'
-    const values = '';
-
-    db
-    .query(text, values)
-    .then(result => {
-        console.log(result.rows[0])
-        response.send(result.rows[0]);
-    })
-    .catch(e => console.error(e.stack))
-}
-
-// get echo by id
 exports.getEcho = async function (request, response) { 
     const { id } = request.params;
     console.log('/getEcho called with id ', id);
     
-    const text = 'SELECT * FROM sample.echo WHERE id = $1'
+    const text = 'SELECT * FROM sample.echo WHERE id = $1;';
     const values = [id];
 
     db
@@ -38,7 +22,7 @@ exports.echo = async function (request, response) {
     const { inputText } = request.body;
     console.log('/echo called inputText ', inputText);
     
-    const text = 'INSERT INTO sample.echo(echo, reversed) VALUES($1, FALSE) RETURNING *;'
+    const text = 'INSERT INTO sample.echo(echo, reversed) VALUES($1, FALSE) RETURNING *;';
     const value = [inputText];
 
     db
@@ -56,7 +40,7 @@ exports.reverse = async function (request, response) {
     const { inputText } = request.body;
     console.log('/reverse called inputText ', inputText);
     
-    const text = 'INSERT INTO sample.echo(echo, reversed) VALUES($1, TRUE) RETURNING *;'
+    const text = 'INSERT INTO sample.echo(echo, reversed) VALUES($1, TRUE) RETURNING *;';
     const value = [inputText.split("").reverse().join("")];
 
     db
