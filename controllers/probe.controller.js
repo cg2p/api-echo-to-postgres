@@ -11,7 +11,7 @@ exports.dbReady = async function (request, response) {
     .query(text, values)
     .then(result => {
         console.log(result.rows[0])
-        response.json({ status: "UP", checks: result.rows[0] });
+        response.json({ status: "UP", checks: result.rows[0], text: "hello" });
  //       response.send(result.rows[0]);
     })
     .catch(e => {
