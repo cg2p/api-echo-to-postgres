@@ -39,8 +39,8 @@ server.use('/api', echo);
 
 // probe
 server.use('/live', health.LivenessEndpoint(healthcheck));
-//server.use('/ready', health.ReadinessEndpoint(healthcheck));
-server.use('/ready', probe);
+server.use('/ready', health.ReadinessEndpoint(healthcheck));
+//server.use('/ready', probe);
 server.use('/health', health.HealthEndpoint(healthcheck));
 
 server.listen(port, (err) => {

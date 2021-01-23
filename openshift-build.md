@@ -12,5 +12,5 @@ oc create secret generic api-echo-postgres-secret \
 
 oc set env --from=secret/api-echo-postgres-secret dc/api-echo-postgres
 
-oc expose svc/api-echo-postgres --name=api-echo-postgres-route
+//oc expose svc/api-echo-postgres --name=api-echo-postgres-route
 ```
