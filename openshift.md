@@ -33,6 +33,7 @@ oc new-project hello-node
 # not using nodejs~https://github.com/cg2p/hello-node.git
 # detects EXPOSE in Dockerfile and sets Target Port in Route (which is the port the app in container is lisenting on)
 oc new-app https://github.com/cg2p/hello-node.git
+oc new-app https://github.com/cg2p/hello-node.git --env-file=caine-postgresql.env
 
 # EXPOSE is good for inter-container communication
 # if Dockerfile EXPOSE is not set then
@@ -51,17 +52,3 @@ oc status
 # get the URL to call
 ```
 
-
-
-
-
-
-
-
-
-
-
-## other cmds
-oc expose service reverse-with-nextjs-material --name=reverse-app-service --port=3000 --protocol="TCP" --generator="service/v2"
-oc patch service reverse-app-service --port=3000 --protocol="TCP" --generator="service/v2"
- 

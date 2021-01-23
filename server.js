@@ -8,7 +8,7 @@ let healthcheck = new health.HealthChecker();
 
 const echo = require('./routes/echo.route');
 
-var port = process.env.SERVICEPORT || 3001;
+var port = process.env.SERVER_PORT || 3000;
 
 // set-up server
 const server = express();
@@ -43,3 +43,5 @@ server.listen(port, (err) => {
   
     console.log('Server ready on port %s', port);
   })
+
+  module.exports = server;

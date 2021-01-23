@@ -4,7 +4,7 @@
   "description": "Echo API to store echo or reverse echo text in PostgreSQL database",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "SERVER_PORT=3000 mocha --timeout 5000 test/*_test.js",
     "build": "npm install",
     "start": "node server.js"
   },
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/cg2p/api-echo-to-postgres.git"
   },
   "keywords": [
-    "hello"
+    "echo"
   ],
   "author": "cg2p",
   "license": "ISC",
@@ -23,7 +23,11 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "http": "0.0.0",
-    "pg": "latest"
+    "pg": "latest",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "dotenv": "^8.2.0",
+    "mocha": "^8.2.1"
   },
   "devDependencies": {},
   "bugs": {

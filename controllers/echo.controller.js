@@ -49,11 +49,5 @@ exports.reverse = async function (request, response) {
         console.log(result.rows[0]);
         response.json({ id: result.rows[0].id, echo: result.rows[0].echo, reversed: result.rows[0].reversed });
     })
-    .catch(e => console.error(e.stack))  }
-
-/*
-// echoes
-exports.echoes = async function (request, response) {
-    console.log('/echoes called');
-};
-*/
+    .catch(e => console.error(e.stack))  
+}
