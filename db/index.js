@@ -1,11 +1,25 @@
 const { Pool } = require('pg');
+const config = require('../config');
+
+
+const pghost = config.pghost;
+const pgport = config.pgport;
+const pguser = config.pguser;
+const pgpassword = config.pgpassword;
+const pgdatabase = config.pgdatabase;
+
+console.log("PGHOST=%s", pghost);
+console.log("PGPORT=%s", pgport);
+console.log("PGUSER=%s", pguser);
+console.log("PGPASSWORD=%s", pgpassword);
+console.log("PGDATABASE=%s", pgdatabase);
 
 const pool = new Pool({
-  host: process.env.PGHOST,
-  port: process.env.PGPORT,
-  user: process.env.PGUSER,
-  password: process.env.PGPASSWORD,
-  database: process.env.PGDATABASE,
+  host: pghost,
+  port: pgport,
+  user: pguser,
+  password: pgpassword,
+  database: pgdatabase,
   ssl: { rejectUnauthorized: false }
 });
 

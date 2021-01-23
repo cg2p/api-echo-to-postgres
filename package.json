@@ -6,6 +6,7 @@
   "scripts": {
     "test": "SERVER_PORT=3000 mocha --timeout 5000 test/*_test.js",
     "build": "npm install",
+    "dev": "NODE_ENV=dev && node server.js",
     "start": "node server.js"
   },
   "repository": {

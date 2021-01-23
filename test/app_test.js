@@ -9,13 +9,21 @@ reqServer = process.env.HTTP_TEST_SERVER || server;
 
 describe('Basic routes tests', function() {
 
-    it('GET to / should return 200', function(done){
+    it('GET to /live should return 200', function(done){
         chai.request(reqServer)
-        .get('/')
+        .get('/live')
         .end(function(err, res) {
             res.should.have.status(200);
             done();
         })
+    })
 
+    it('GET to /ready should return 200', function(done){
+        chai.request(reqServer)
+        .get('/ready')
+        .end(function(err, res) {
+            res.should.have.status(200);
+            done();
+        })
     })
 })
