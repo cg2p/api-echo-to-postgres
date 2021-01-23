@@ -17,7 +17,7 @@ describe('Basic routes tests', function() {
             done();
         })
     })
-
+/*
     it('GET to /ready should return 200', function(done){
         chai.request(reqServer)
         .get('/ready')
@@ -26,4 +26,5 @@ describe('Basic routes tests', function() {
             done();
         })
     })
+    */
 })
