@@ -11,7 +11,7 @@ const config = require('./config');
 const echo = require('./routes/echo.route');
 const probe = require('./routes/probe.route');
 
-var port = process.env.SERVER_PORT || 3000;
+var port = process.env.SERVER_PORT || 3001;
 
 // which environment
 console.log('NODE_ENV=%s', config.env);
